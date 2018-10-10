@@ -1,0 +1,58 @@
+<!DOCTYPE=html>
+<html lang = "ru-RU">
+<head>
+  <title>Website</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="icon.jpg" type="image/x-icon">
+</head>
+<body style="background-color:black;color:white;font-size:10px">
+  <pre>
+    from tkinter import *
+    root = Tk()
+
+    ea = Entry(width=5)
+    eb = Entry(width=5)
+    ec = Entry(width=5)
+    l1 = Label(bg='white', fg='black', width=3, text = 'x^2')
+    l2 = Label(bg='white', fg='black', width=3, text = 'x')
+    l3 = Label(bg='white', fg='black', width=3, text = '= 0')
+    b = Button(text="Calculate")
+    l = Label(bg='white', fg='black', width=20)
+
+    def calc(event):
+        from math import sqrt
+        try:
+            a = int(ea.get())
+        except ValueError:
+            a = 1
+        try:
+            b = int(eb.get())
+        except ValueError:
+            b = 1
+        try:
+            c = int(ec.get())
+        except ValueError:
+            x1 = 0
+            x2 = 0 - b / a
+            l['text'] = f'x1 = {x1}, x2 = {x2}'
+            return 0
+        d = b**2 - 4*a*c
+        if d < 0:
+            l['text'] = 'D < 0'
+            return 0
+        x1 = (-b - sqrt(d))/(2*a)
+        x2 = (-b + sqrt(d))/(2*a)
+        l['text'] = f'x1 = {x1}, x2 = {x2}'
+    b.bind('<Button-1>', calc)
+
+    ea.pack(side = 'left',fill = X)
+    l1.pack(side = 'left')
+    eb.pack(side = 'left',fill = X)
+    l2.pack(side = 'left')
+    ec.pack(side = 'left',fill = X)
+    l3.pack(side = 'left')
+    b.pack(side = 'right')
+    l.pack(side = 'top', fill = X, expand = True)
+    root.mainloop()
+  </pre>
+</body>
