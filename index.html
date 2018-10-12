@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <title>Website_name</title>
+  <meta charset=utf-8>
+  <link rel='icon' href='image1.jpg'>
+  <style>
+    .centered{text-align:center}
+  </style>
+</head>
+<body style='background-image:url(image.jpg);font-size:30px;color:white'>
+  <h1 style='background-color:lightgreen;text-align:center;margin:0px'>Examle</h1>
+  <p style="text-align:center;background-color:lightgreen;margin:0px">
+    <a href='index.html' style='border:1px solid green;background-color:lightgreen;color:green'>Раздел 1</a>
+    <a href='r2.html' style='border:1px fill;background-color:green;color:white'>Раздел 2</a>
+    <a href='r3.html' style='border:1px fill;background-color:green;color:white'>Раздел 3</a>
+  </p>
+  <hr style='margin:0'>
+  <p class='centered' style='margin:30'>
+    <img src="image2.jpg" alt="Cannot load image" style='margin:0px;width:600px;height:200px'>
+  </p>
+  <h3 style='color:white;background-color:black;margin:0px'>Калькулятор квадратных уравнений на python 3.6<h1>
+  <pre style="background-color:black;margin:0px;font-size:11px">
+    from tkinter import *<br>
+    root = Tk()<br>
+<br>
+    ea = Entry(width=5)<br>
+    eb = Entry(width=5)<br>
+    ec = Entry(width=5)<br>
+    l1 = Label(bg='white', fg='black', width=3, text = 'x^2')<br>
+    l2 = Label(bg='white', fg='black', width=3, text = 'x')<br>
+    l3 = Label(bg='white', fg='black', width=3, text = '= 0')<br>
+    b = Button(text="Calculate")<br>
+    l = Label(bg='white', fg='black', width=20)<br>
+<br>
+    def calc(event):<br>
+        from math import sqrt<br>
+        try:<br>
+            a = int(ea.get())<br>
+        except ValueError:<br>
+            a = 1<br>
+        try:<br>
+            b = int(eb.get())<br>
+        except ValueError:<br>
+            b = 1<br>
+        try:<br>
+            c = int(ec.get())<br>
+        except ValueError:<br>
+            x1 = 0 #x(7x-49)<br>
+            x2 = 0 - b / a<br>
+            l['text'] = f'x1 = {x1}, x2 = {x2}'<br>
+            return 0<br>
+        d = b**2 - 4*a*c<br>
+        if d < 0:<br>
+            l['text'] = 'D < 0'<br>
+            return 0<br>
+        x1 = (-b - sqrt(d))/(2*a)<br>
+        x2 = (-b + sqrt(d))/(2*a)<br>
+        l['text'] = f'x1 = {x1}, x2 = {x2}'<br>
+    b.bind('<Button-1>', calc)<br>
+<br>
+    ea.pack(side = 'left',fill = X)<br>
+    l1.pack(side = 'left')<br>
+    eb.pack(side = 'left',fill = X)<br>
+    l2.pack(side = 'left')<br>
+    ec.pack(side = 'left',fill = X)<br>
+    l3.pack(side = 'left')<br>
+    b.pack(side = 'right')<br>
+    l.pack(side = 'top', fill = X, expand = True)<br>
+    root.mainloop()<br>
+  </pre>
+
+</body>
